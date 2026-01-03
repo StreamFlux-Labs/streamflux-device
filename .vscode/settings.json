@@ -1,0 +1,7 @@
+{
+    "embed.targetIP": "192.168.7.2",
+    "embed.targetUser": "root",
+    "embed.targetPath": "/usr/local/StreamFluxDevice",
+    "embed.debugPort": "2345",
+    "embed.hostBuildPath": "${workspaceFolder}/build_arm/bin/StreamFluxDevice"
+}
