@@ -36,10 +36,7 @@ make -j$(nproc)
 When you are ready to move to the board:
 
 ```bash
-mkdir build_arm && cd build_arm
-cmake -DCMAKE_BUILD_TYPE=Release \
-      -DBUILD_FOR_EMBEDDED=ON \
-      -DCMAKE_TOOLCHAIN_FILE=../cmake/Toolchain-Rockchip.cmake \
-      ..
-make -j$(nproc)
+mkdir -p build_arm
+docker run --rm -u $(id -u):$(id -g) -v $(pwd):/workspace -w /workspace/build_arm luckfox-compiler:1.0 \
+    /bin/bash -c "cmake -DCMAKE_TOOLCHAIN_FILE=/opt/luckfox-toolchain/toolchain.cmake .. && make -j$(nproc)"
 ```
